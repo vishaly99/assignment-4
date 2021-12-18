@@ -1,0 +1,16 @@
+<p>Update Product Form</p>
+<form [formGroup]="productform" (ngSubmit)="onSubmit()">
+    <label for="ProductName">ProductName</label>
+    <input type="text" name="productname" formControlName="productname" placeholder="Enter Product Name">
+    <div style="color: red;" *ngIf="productname && productname.invalid && productname.touched">Product Name is required</div>
+    <br>
+    <label for="Price">Price</label>
+    <input type="number" name="price" formControlName="price" placeholder="Enter Product Price">
+    <div style="color: red;" *ngIf="price && price.invalid && price.touched">Product Price is required</div>
+    <br>
+    <label for="Quantity">Quantity</label>
+    <input type="number" name="qty" formControlName="qty" placeholder="Enter Product Quantity">
+    <div style="color: red;" *ngIf="qty && qty.invalid && qty.touched">Product Quantity is required</div>
+    <br>
+    <button [disabled]="productform.invalid" type="submit">Submit</button>
+</form>

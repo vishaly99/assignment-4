@@ -1,0 +1,23 @@
+<p>product-get works!</p>
+<!-- <a [routerLink]="product/create" routerLinkActive="active">Insert</a> -->
+<table border="1">
+    <thead>
+        <a [routerLink]="['/product/create']">Create</a>
+        <tr>
+            <td>ProductName</td>
+            <td>Price</td>
+            <td>Qty</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of products">
+            <td>{{data.productname}}</td>
+            <td>{{data.price}}</td>
+            <td>{{data.qty}}</td>
+            <td><a [routerLink]="['/product/edit',data._id]">Edit</a></td>
+            <td><a (click)="deleteProduct(data._id)">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
+<router-outlet></router-outlet> 

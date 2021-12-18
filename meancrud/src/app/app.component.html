@@ -1,0 +1,13 @@
+<h1 align="center">Welcome to Angular!!</h1>
+<form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+    <label for="Email">Email</label>
+    <input type="email" formControlName="email" name="email">
+    <span style="color: red;" *ngIf="email && email.invalid && email.touched">Email is Required</span>
+    <br>
+    <label for="Password">Password</label>
+    <input type="email" formControlName="password" name="password">
+    <span style="color: red;" *ngIf="password && password.invalid && password.touched">Password is Required</span>
+    <br>
+    <button [disabled]="loginform.invalid" type="submit">Submit</button>
+</form>
+<router-outlet></router-outlet>
